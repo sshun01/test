@@ -2,11 +2,12 @@
 //  ViewController.m
 //  callURLScheme
 //
-//  Created by 杉山旬 on 9/24/15.
+//  Created by shun on 9/24/15.
 //  Copyright (c) 2015 shun sugiyama. All rights reserved.
 //
 
 #import "ViewController.h"
+
 
 @interface ViewController ()
 
@@ -16,12 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (IBAction)openButtonAction:(id)sender {
+    
+    NSString *scheme = @"COM.SHUN02.URLScheme02://hogehoge.com/fugafuga?query=99999&n1=88888";
+    NSLog(@"%@", scheme);
+    NSURL *urlscheme = [NSURL URLWithString:scheme];
+    [[UIApplication sharedApplication] openURL:urlscheme];
 }
 
 @end
